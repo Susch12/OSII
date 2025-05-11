@@ -1,2 +1,0 @@
-04/05 La fase uno funciona perfectamente (Transfiere un archivo bien y no tiene problemas de conexión, se necesita modificar la infraestructura [/internal/requirement.txt])
-05/05 Se necesita revisar que funcione las modificaciones de infraestructura para poder continuar con la Fase 2
