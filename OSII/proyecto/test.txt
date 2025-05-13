@@ -1,0 +1,4 @@
+04/05 La fase uno funciona perfectamente (Transfiere un archivo bien y no tiene problemas de conexión, se necesita modificar la infraestructura [/internal/requirement.txt])
+05/05 Se necesita revisar que funcione las modificaciones de infraestructura para poder continuar con la Fase 2
+12/05 Se probo el programa y funciona correctamente, se continua para la Fase 2
+12/05 Se implemento la Fase 2 y Fase 3, parece que funciona, se hizo un update a los archivos main.go, peer.go, message.go. Falta más pruebas para comprobar su total 

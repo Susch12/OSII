@@ -1,0 +1,2 @@
+instalar go 
+go google repo de github
