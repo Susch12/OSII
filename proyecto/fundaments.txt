@@ -1,0 +1,89 @@
+✅ Fase 1: Transferencia de archivos/directorios entre nodos
+Objetivo:
+
+Permitir que cualquier nodo pueda enviar archivos o directorios a otro nodo.
+Tareas:
+
+Diseñar el protocolo de comunicación entre nodos (TCP/gRPC).
+
+Crear una estructura de identificación de nodos (ID + dirección IP/puerto).
+
+Implementar el envío de archivos entre nodos:
+
+    Fragmentación de archivos (como hace BitTorrent) [opcional].
+
+    Checksum para verificar integridad.
+
+    Definir un directorio raíz sincronizable por nodo.
+
+Herramientas/paquetes Go:
+
+    net, net/http, io/ioutil, os
+
+    Para P2P: libp2p, o implementación propia con TCP/UDP.
+
+✅ Fase 2: Eliminación remota de archivos/directorios
+Objetivo:
+
+Permitir que cualquier nodo solicite la eliminación de archivos/directorios en cualquier otro nodo.
+Tareas:
+
+Crear un esquema de comandos: DELETE <path> FROM <peer_id>.
+
+Asegurar que las eliminaciones se propaguen a todos los nodos activos.
+
+    Registrar operaciones para aplicarlas luego a nodos desconectados.
+
+Consideraciones:
+
+    Puede usarse un log distribuido o un sistema de colas en memoria/archivo para manejar cambios pendientes.
+
+✅ Fase 3: Visualización del sistema de archivos
+Objetivo:
+
+Permitir que cada nodo vea la estructura de archivos de los demás.
+Tareas:
+
+Implementar una representación local del árbol de archivos.
+
+Sincronizar estructuras entre nodos (pull o push, cada X tiempo).
+
+    Resolver conflictos (última modificación, hashes).
+
+Herramientas:
+
+    Podrías usar estructuras como Merkle Trees para representar directorios y detectar cambios.
+
+✅ Fase 4: Interfaz Gráfica (GUI)
+Objetivo:
+
+Crear una GUI intuitiva para que el usuario realice las operaciones anteriores.
+Tareas:
+
+Crear ventanas separadas por nodo.
+
+Mostrar estructura de archivos (tipo explorador).
+
+Añadir botones para "Transferir" y "Eliminar".
+
+    Sincronizar visualizaciones en tiempo real.
+
+Herramientas:
+
+    Fyne (recomendado para GUI en Go)
+
+    Alternativas: gioui, Walk (Windows), o conexión con front-end web (e.g. vía WebSockets + frontend en React o similar)
+
+🧠 Fundamentos de funcionamiento (BitTorrent-like)
+
+    Cada nodo es servidor y cliente a la vez.
+
+    Usa TCP para conexiones persistentes.
+
+    Los nodos se identifican por un peer ID y un puerto.
+
+    Las operaciones (transferencia, eliminación, visualización) se envían como mensajes serializados (tipo JSON o gob).
+
+    Cada nodo mantiene un log de operaciones aplicadas para permitir sincronización tras reconexión.
+
+    Si un nodo falla, el resto sigue trabajando y mantiene registro de cambios.
