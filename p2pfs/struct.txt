@@ -1,0 +1,31 @@
+p2pfs/
+├── cmd/
+│   └── main.go                  ← Punto de entrada: arranca servidor, cliente y GUI
+│
+├── config/
+│   └── peers.json               ← Lista de nodos (IP, puerto, ID)
+│
+├── internal/
+│   ├── peer/                    ← Lógica P2P: conexión, envío/recepción, logs
+│   │   ├── peer.go              ← Cliente TCP: enviar mensajes a otros peers
+│   │   ├── handler.go           ← Servidor TCP: recibir y procesar mensajes
+│   │   └── healthcheck.go       ← Verifica qué nodos están vivos o caídos
+│
+│   ├── fs/                      ← Operaciones sobre sistema de archivos
+│   │   ├── view.go              ← Escanear archivos locales para mostrar GUI
+│   │   ├── delete.go            ← Eliminar archivos o directorios
+│   │   ├── transfer.go          ← Guardar archivos recibidos o enviarlos
+│   │   └── sync.go              ← Re-sincronizar un nodo que se reconecta
+│
+│   ├── message/                 ← Formato común de mensajes
+│   │   └── message.go           ← Estructura Message, tipos, comandos
+│
+│   ├── log/                     ← Registro de operaciones locales
+│   │   ├── logger.go            ← Guardar y leer operaciones en archivo local
+│   │   └── model.go             ← Estructura de Operation: tipo, path, timestamp
+│
+│   └── gui/                     ← Interfaz gráfica con Fyne
+│       └── gui.go               ← Paneles, botones, íconos de estado
+│
+├── go.mod
+└── README.md
