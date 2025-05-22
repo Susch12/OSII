@@ -1,0 +1,40 @@
+# struct.txt
+
+📂 Estructura del proyecto `p2pfs`
+
+p2pfs/
+├── cmd/
+│   └── main.go
+├── config/
+│   └── peers.json
+├── dependencias.txt
+├── fundamentos.txt
+├── go.mod
+├── go.sum
+├── internal/
+│   ├── fs/
+│   │   ├── delete.go
+│   │   ├── sync.go
+│   │   ├── transfer.go
+│   │   └── view.go
+│   ├── gui/
+│   │   └── gui.go
+│   ├── log/
+│   │   ├── logger.go
+│   │   └── model.go
+│   ├── message/
+│   │   └── message.go
+│   └── peer/
+│       ├── handler.go
+│       ├── healthcheck.go
+│       ├── id.go
+│       └── peer.go
+├── p2pfs-app
+├── progreso.txt
+├── README.md
+├── scripts/
+│   └── install.sh
+├── shared/
+│   ├── ejemplo2.txt
+│   └── ejemplo3.txt
+└── struct.txt

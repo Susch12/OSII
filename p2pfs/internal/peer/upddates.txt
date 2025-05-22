@@ -1,0 +1,13 @@
+21/05
+
+Listo, el archivo healthchecker.go ya está actualizado e implementa:
+
+    Verificación básica (CheckPeerAlive)
+
+    Monitor de estado (GetLivePeers)
+
+    Servidor de handshakes (StartHandshakeListener)
+
+    Cliente de handshakes (SendHelloAndReceivePeers)
+
+    Fusión de peers descubiertos (MergePeerListsFromStrings)

@@ -1,0 +1,25 @@
+# progreso.txt
+
+📋 Comparación entre requisitos del proyecto y el estado actual del sistema
+
+✅ Requisitos funcionales (cumplidos):
+
+1. [✔] El sistema funciona en red local con múltiples nodos.
+2. [✔] Cada nodo puede detectar su IP e ID automáticamente.
+3. [✔] Comunicación entre nodos con TCP.
+4. [✔] Transferencia de archivos distribuida.
+5. [✔] Eliminación de archivos desde GUI.
+6. [✔] Interfaz gráfica clara que representa el estado de los nodos.
+7. [✔] Sincronización manual de archivos desde GUI.
+8. [✔] Tolerancia a fallos: nodos desconectados no interrumpen el sistema.
+
+🔧 Requisitos no funcionales / sugerencias adicionales:
+
+1. [⚠] No hay sincronización automática al reconectar un nodo (esto puede agregarse con logs o mensajes SYNC).
+2. [⚠] Aún no hay mecanismo de recuperación automática tras reconexión.
+3. [✔] Modularidad completa (fs, peer, gui, cmd, config).
+4. [✔] Se puede ejecutar con un solo comando tras clonar (con script install.sh).
+5. [✔] GUI funcional en todas las máquinas con Fyne.
+
+🎯 Estado general: 90% COMPLETADO
+Solo faltaría implementar un mecanismo opcional de sincronización automática al reconectar (ej: broadcast de estado o intercambio de logs).

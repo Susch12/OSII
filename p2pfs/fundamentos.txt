@@ -1,0 +1,31 @@
+# fundamentos.txt
+
+Este sistema implementa una base de datos distribuida con enfoque P2P (peer-to-peer) tolerante a fallos.
+
+🧠 Fundamentos clave:
+
+1. Identificación automática de nodo:
+   - Cada máquina detecta su IP local y busca en peers.json cuál es su ID asignado.
+   - No se requiere configuración manual por máquina.
+
+2. Comunicación P2P con TCP:
+   - Cada nodo escucha conexiones en su puerto asignado.
+   - Los nodos pueden enviarse archivos directamente entre sí.
+
+3. Tolerancia a fallos:
+   - Si un nodo está desconectado, los demás continúan funcionando.
+   - Al reconectarse, se puede sincronizar para recuperar lo perdido.
+
+4. Interfaz gráfica con Fyne:
+   - Se muestra una cuadrícula de nodos.
+   - Se permite actualizar la lista, eliminar y transferir archivos.
+
+5. Actualización distribuida:
+   - Los archivos se almacenan en una carpeta local (shared/).
+   - Se reflejan en la GUI de forma visual y sencilla.
+
+6. Modularidad:
+   - El código está dividido en capas: peer, fs (filesystem), gui, y configuración.
+   - Esto facilita mantenimiento, extensión, y pruebas.
+
+Este enfoque permite ejecutar el sistema en varias máquinas de red local, simulando un entorno distribuido real con mínima configuración.
