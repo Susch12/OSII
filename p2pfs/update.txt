@@ -1,0 +1,17 @@
+Integrar visualización remota:
+
+    Crear una función RequestFileTree() en peer.go
+
+    Mostrar estructura recibida por cada peer en su bloque
+
+Mostrar oplog.json desde GUI:
+
+    Un botón Ver historial → abre una ventana con los eventos más recientes
+
+Habilitar SendFileWithRetry() en lugar de SendFile() en transferBtn
+
+Agregar filtro por tipo / búsqueda por nombre
+
+Soporte multiplataforma (macOS/Windows):
+
+    En lugar de xdg-open, usar utils.OpenFileCrossPlatform() según el sistema operativo
